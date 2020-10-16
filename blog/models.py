@@ -19,7 +19,7 @@ class Blog (models.Model):
     description   = models.TextField(default='')
     author_details=models.TextField(default='')
     author_image  = models.ImageField(upload_to= 'images/blog',default='')
-    # date         = models.DateField(auto_now_add=False, blank=True, null=True)
+    date         = models.DateField(auto_now_add=False, blank=True, null=True)
 
 
 

@@ -6,7 +6,7 @@ def about(request):
 
     member        = Team.objects.filter(status = 'member')
     dev           = Team.objects.filter(status = 'developer')
-    coordinator   = Team.objects.filter(status = 'cord')
+    coordinator   = Team.objects.filter(status = 'core')
     faculty        = Team.objects.filter(status = 'fac')
 
     context = {'member':member,

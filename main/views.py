@@ -51,22 +51,28 @@ def home(request):
 
         event = Events.objects.filter(trends='Y')
 
+        try:
+            sch=Schedule.objects.all()
+            deadline = sch[0].deadline
+            dataDictionary = {'date':deadline}
+            # dataJSON = dumps(dataDictionary)
+            dataJSON =  dumps(deadline, default=json_serial)
+            date=deadline.date
+            time=deadline.time
+            x=str(date)
+            print(x)
 
-        sch=Schedule.objects.all()
-        deadline = sch[0].deadline
-        dataDictionary = {'date':deadline}
-        # dataJSON = dumps(dataDictionary)
-        dataJSON =  dumps(deadline, default=json_serial)
-        date=deadline.date
-        time=deadline.time
-        x=str(date)
-        print(x)
-
-        return render(request,'index.html', {'th':th,
+            return render(request,'index.html', {'th':th,
                                             'blog':blog,
                                             'sch':sch,
                                             'event':event,
                                             'data':dataJSON})
+        except:
+            return render(request,'index.html', {'th':th,
+                                            'blog':blog,
+                                            'sch':sch,
+                                            'event':event,
+                                            })
 
 
 

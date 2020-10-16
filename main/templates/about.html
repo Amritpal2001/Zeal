@@ -5,7 +5,14 @@
 {% load static %}
 {% block content %}
 <section class="team">
-  <h2 class="title text-center" style="padding-top:50px;">Constitution</h2>
+  <h2 class="title text-center" style="padding: 50px;"> Vision </h2>
+  <p class="text-center" style="font-size: x-large;">ZEAL shall work towards a day when every student shall voice his ideas free from any trammels of linguistic inadequacy.</p>
+  <h2 class="title text-center" style="padding: 50px;"> Mission </h2>
+  <p class="text-center" style="font-size: x-large;">To break the barrier that exists between one’s mother tongue and the universal code for communication-English. <br>
+    To facilitate peer-learning and promote the growth of a networking mentality  <br>
+    To help every fellow member realize his potential and make them capable of portraying themselves in the most enticing manner <br></p>
+
+  <h2 class="title text-center" style="padding-top:70px;">Constitution</h2>
 <div class="row" >
   <div class="col-md-6" style="padding:50px;">
     <h3>Aim</h3>
@@ -82,7 +89,9 @@
       <div class="team-member">
         <div class="th-mouse-effect">
           <div class="team-img">
+            {% if i.images %}
             <img src="{{ i.images.url }} " style="height: 360px; width: 275x; padding: 30px;" alt="Team img" >
+            {% endif %}
             <h3 class="text-center"> {{ i.name }} </h3>
             <h3 class="text-center"> {{ i.designation }} </h3>
           </div>
@@ -123,8 +132,10 @@
     <div class="team-member">
       <div class="th-mouse-effect">
         <div class="team-img">
+          {% if i.images %}
           <img src="{{ i.images.url }} " style="height: 360px; width: 275x; padding: 30px;" alt="Team img" >
-          <h3 class="text-center"> {{ i.name }} </h3>
+          {% endif %}
+                    <h3 class="text-center"> {{ i.name }} </h3>
           <h3 class="text-center"> {{ i.designation }} </h3>
 
         </div>
@@ -166,21 +177,22 @@
     <div class="team-member">
       <div class="th-mouse-effect">
         <div class="team-img">
+          {% if i.images %}
           <img src="{{ i.images.url }} " style="height: 360px; width: 275x; padding: 30px;" alt="Team img" >
-          <h3 class="text-center"> {{ i.name }} </h3>
-          <h3 class="text-center"> {{ i.designation }} </h3>
+          {% endif %}
+           
         </div>
         <!-- <div class="overlay text-center"> -->
           <div class="content">
-            <h4>{{ i.name }}</h4>
-            <span>{{ i.designation }}</span>
-            <p>{{ i.role }}</p>
+            <h4 class="text-center">{{ i.name }}</h4>
+            <h5 class="text-center">{{ i.designation }}</h5>
+            <p class="text-center">{{ i.role }}</p>
             
           </div>
           <div class="social-media">
             <!-- <li><a href="#"><i class="tf-ion-social-facebook" aria-hidden="true"></i></a></li> -->
             <!-- <li><a href="#"><i class="tf-ion-social-twitter" aria-hidden="true"></i></a></li> -->
-            <li><a href="{{ i.linkedin }}"><i class="tf-ion-social-linkedin-outline" aria-hidden="true"></i></a></li>
+            <h4 class="text-center"><a href="{{ i.linkedin }}" ><i class="tf-ion-social-linkedin-outline" aria-hidden="true"></i></a><h4>
             <!-- <li><a href="#"><i class="tf-ion-social-google-outline" aria-hidden="true"></i></a></li> -->
             <!-- <li><a href="#"><i class="tf-ion-social-instagram-outline" aria-hidden="true"></i></a></li> -->
           </div>
@@ -198,7 +210,7 @@
   
   <div class="col-md-12">
     <div class="join-team text-center">
-      <a class="btn btn-default btn-main" href="#" role="button">Join Our Team</a>
+      <a class="btn btn-default btn-main" href="{% url 'register' %}" role="button">Join Our Team</a>
     </div>
   </div>
   </div>
@@ -218,8 +230,10 @@
     <div class="team-member">
       <div class="th-mouse-effect">
         <div class="team-img">
+          {% if i.images %}
           <img src="{{ i.images.url }} " style="height: 360px; width: 275x; padding: 30px;" alt="Team img" >
-          <h3 class="text-center"> {{ i.name }} </h3>
+          {% endif %}
+                    <h3 class="text-center"> {{ i.name }} </h3>
           <h3 class="text-center"> {{ i.designation }} </h3>
         </div>
         <div class="overlay text-center">
@@ -246,7 +260,7 @@
   
   <div class="col-md-12">
     <div class="join-team text-center">
-      <a class="btn btn-default btn-main" href="#" role="button">Join Our Team</a>
+      <a class="btn btn-default btn-main" href="{% url 'register' %}" role="button">Join Our Team</a>
     </div>
   </div>
   </div>
